@@ -39,14 +39,14 @@
         input[type="submit"] {
             width: 100%;
             padding: 10px;
-            background-color: #007bff;
+            background-color: rgba(255, 0, 144, 0.25); /* bg-danger bg-opacity-25 */
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
         input[type="submit"]:hover {
-            background-color: #0056b3;
+            background-color: rgba(255, 0, 187, 0.25)); /* bg-danger bg-opacity-25 */
         }
     </style>
 </head>
@@ -66,7 +66,7 @@
         <label for="address">ที่อยู่:</label>
         <textarea id="address" name="address" required></textarea>
         
-        <label for="line_id">Line id:</label>
+        <label for="line_id">Line:</label>
         <input type="text" id="line_id" name="line_id">
         
         <input type="submit" value="บันทึกข้อมูล">
