@@ -13,7 +13,10 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background-image: url(https://www.jr-aluminium.com/uploads/cke-img-upload/1607391668-5fced9b49844e.jpg);
+      background-image: url(./img/15.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
     form {
@@ -57,23 +60,32 @@
       display: block;
       margin-top: 15px;
     }
-    
+    .return-link {
+      text-decoration: none;
+      background-color: #ff9ee7;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .return-link:hover {
+      background-color: #f784bd;
+    }
   </style>
 </head>
 <body>
+<form action="file:///C:/Users/MILLX/Desktop/GitHubProject/scrum_10/CatCamera.html?" method="get">
+    <div center> <img src="./img/14.png" width="25%"></div>
+    <h1 center>Images-Login</h1>
+    <label for="ID Images" style="text-align: left;">ID Images:</label>
+    <input type="text" id="ID Images" name="ID Images" required>
 
-  <form>
-    <h1 center>FILO-Login</h1>
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required>
-
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
-
-    <button type="submit">Login</button>
-    
-    <button type="submit">Register</button>
+    <label for="Images Password" style="text-align: left;">Images Password:</label>
+    <input type="password" id="Images Password" name="Images Password" required>
+    <button type="submit" class="return-link">Login</button>
   </form>
-
 </body>
 </html>
