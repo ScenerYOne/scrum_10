@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Checkout Page with QR Code</title>
+
+    <!-- นำเข้าไฟล์ CSS ของ Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- สามารถเพิ่มไฟล์ CSS เพิ่มเติมหรือแก้ไขได้ตามต้องการ -->
+    <style>
+        body {
+            background-color: #FFC0CB; /* สีพื้นหลังสำหรับ body */
+        }
+
+        .bg-pink {
+            background-color: #FFC0CB !important; /* สีพื้นหลังสีชมพูใน Bootstrap */
+        }
+        .btn-pink {
+            background-color: #FFC0CB; /* สีชมพู (Pink) */
+            color: #ffffff; /* สีข้อความ (White) */
+        }
+        .navbar {
+            background-image: url('https://thonglorpet.com/_content_html_editor_upload/images/400213D1-C3AC-E299-4062-AD1160DE97BB.jpg'); /* เปลี่ยนเป็น URL ของรูปภาพที่คุณต้องการให้เป็นพื้นหลัง */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="./imges/10.png" alt="Filo Logo" width="40%">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <button class="btn btn-pink mt-3">Home <span class="sr-only">(current)</span></button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-pink mt-3">Products</button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-pink mt-3">Cart</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Checkout Section -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8">
+                <!-- Cart Items -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title">Your Cart</h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- Add your cart items here -->
+                        <ul class="list-group">
+                            <li class="list-group-item">Standard - 250 Bath</li>
+                            <li class="list-group-item">Delux - 550 Bath </li>
+                            <!-- Add more items as needed -->
+                        </ul>
+                    </div>
+                </div>
+                <!-- End Cart Items -->
+
+                <!-- Shipping Information Form -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title">Cat Owner Information</h5>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="firstName">Person Name</label>
+                                    <input type="text" class="form-control" id="PersonName" placeholder="Name" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="lastName">Cat Name</label>
+                                    <input type="text" class="form-control" id="CatName" placeholder="Name" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Phone
+                                </label>
+                                <input type="text" class="form-control" id="Phone" placeholder="099-9999999" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="RoomBooking">RoomBooking</label>
+                                <select class="form-control" id="RoomBooking" required>
+                                    <option value="" disabled selected>Select a room</option>
+                                    <option value="Room1">Standard : 250 Bath</option>
+                                    <option value="Room2">Superior : 400 Bath </option>
+                                    <option value="Room3">Delux : 550 Bath</option>
+                                    <option value="Room4">Sweet : 900 Bath</option>
+                                </select>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="datePicker">Date/Month/Year</label>
+            
+                                    <input type="date" class="form-control" id="datePicker" value="2023-01-01" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-pink mt-3" >Continue to Payment</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- End Shipping Information Form -->
+            </div>
+
+            <!-- Order Summary -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Order Summary</h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- Add your order summary content here -->
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Subtotal: 800 Bath</li>
+                            
+                            <li class="list-group-item"><strong>Total: 800 Bath</strong></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- QR Code Image -->
+                <img src="./imges/09.png" alt="QR Code" class="img-fluid mt-3">
+            </div>
+            <!-- End Order Summary -->
+        </div>
+    </div>
+
+    <!-- นำเข้าไฟล์ JavaScript ของ Bootstrap และ Popper.js (สำหรับ dropdowns และปุ่มต่าง ๆ) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- สามารถเพิ่มไฟล์ JavaScript เพิ่มเติมหรือแก้ไขได้ตามต้องการ -->
+    
+</body>
+</html>
