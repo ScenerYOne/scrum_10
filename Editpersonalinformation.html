@@ -22,12 +22,12 @@
         form {
             width: 400px;
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.25);
+            background-color: rgba(255, 255, 255, 0.8);
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border: 2px solid #000000; 
 
-            
+           
         }
         label {
             display: block;
@@ -43,6 +43,8 @@
             padding: 8px;
             margin-bottom: 10px;
             box-sizing: border-box;
+            background-color: #ffffff; /* กำหนดสีเป็นขาว */
+
 
         }
         input[type="submit"] {
@@ -58,12 +60,21 @@
     input[type="submit"]:hover {
         background-color: rgba(255, 41, 162, 1); 
     }
+    
+
+    input[type="text"]:hover,
+    input[type="password"]:hover,
+    textarea:hover,
+    select:hover {
+    background-color: rgba(255, 41, 162, 0.2);
+    }
 
     
 
     </style>
 </head>
 <body>
+
     <form action="/submit_edited_info" method="post">
         <h1>แก้ไขข้อมูลส่วนตัว</h1>
         <label for="username">User:</label>
@@ -83,7 +94,8 @@
         
         <input type="submit" value="บันทึกข้อมูล"> 
 
-    </form>
+    </form> 
+
 </body>
 </html>
 
