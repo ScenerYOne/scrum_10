@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- โค้ด meta tags, links, stylesheets อื่น ๆ -->
+
+    <!-- ส่วนของการเรียกใช้งาน daterangepicker และ css -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    
+    <!-- ส่วนของการเรียกใช้งานไฟล์ CSS -->
+    <style>
+        /* ส่วนของการเรียกใช้งานไฟล์ CSS */
+        .slides {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .slides img {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            transition: opacity 1s ease-in-out;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            line-height: 1.5;
+            background: #ffffff;
+            overflow-x: hidden;
+            font-size: 14px;
+        }
+
+        body:before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 99;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            -webkit-transition: .3s all ease;
+            -o-transition: .3s all ease;
+            transition: .3s all ease;
+        }
+
+        body.offcanvas-menu:before {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .typed-cursor {
+            opacity: 1;
+        }
+
+        .typed-cursor.typed-cursor--blink {
+            animation: typedjsBlink 0.7s infinite;
+            -webkit-animation: typedjsBlink 0.7s infinite;
+            animation: typedjsBlink 0.7s infinite;
+        }
+
+        @keyframes typedjsBlink {
+            50% {
+                opacity: 0.0;
+            }
+        }
+
+        @-webkit-keyframes typedjsBlink {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ส่วนต่าง ๆ ของ HTML ที่มีและได้แก้ไขเพื่อให้ปรับปรุงการเรียกใช้งาน Daterangepicker และปฏิทิน -->
+
+    <div class="hero" style="background-color: #FFC0CB;">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- ส่วนต่าง ๆ ของ HTML ที่มีและได้แก้ไขเพื่อให้ปรับปรุงการเรียกใช้งาน Daterangepicker และปฏิทิน -->
+                <div class="col-lg-7">
+                    <div class="intro-wrap">
+                        <h1 class="mb-6"><span class="d-block">Filo Hotels</span> Cat <span class="typed-words"></span></h1>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <form class="form">
+                                    <div class="row mb-2">
+                                        <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
+                                            <select name="" id="" class="form-control custom-select">
+                                                <option value="">Standard</option>
+                                                <option value="">Superior</option>
+                                                <option value="">Deluxe</option>
+                                                <option value="">Sweet</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-5">
+                                            <input type="text" class="form-control" id="daterange" name="daterange" placeholder="Select Date Range">
+                                        </div>
+                                        <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
+                                            <input type="text" class="form-control" placeholder="# of People">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
+                                            <input type="submit" class="btn btn-primary btn-block" value="Search">
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <label class="control control--checkbox mt-3">
+                                                <span class="caption">Save this search</span>
+                                                <input type="checkbox" checked="checked" />
+                                                <div class="control__indicator"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ส่วนของการแสดงภาพซ้อนทับ -->
+                <div class="col-lg-5">
+                    <div class="slides">
+                        <img src="C:\Users\Admins\Downloads\tour-1.0.0\images\OIP.jpg" alt="Image" class="img-fluid active" style="height:100%; width: 100%;">
+                        <img src="C:\Users\Admins\Downloads\tour-1.0.0\images\cog3ktbni8nf.jpg" alt="Image" class="img-fluid" style="height:100%; width: 100%;">
+                        <img src="C:\Users\Admins\Downloads\tour-1.0.0\images\v2-87954e4deba5ec0d30f4484b8e0b222e_r.jpg" alt="Image" class="img-fluid" style="height:100%;width: 100%;" >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ส่วนของการแสดงผลและการใช้งานปฏิทิน -->
+    <div class="daterangepicker ltr show-calendar opensright" style="top:401.5px; left:433.062px; right: auto; display: none;">
+        <div class="ranges"></div>
+        <div class="drp-calendar left">
+            <div class="calendar-table"></div>
+            <div class="calendar-time" style="display: none;"></div>
+        </div>
+        <div class="drp-calendar right">
+            <div class="drp-calendar left">
+                <div class="calendar-table"></div>
+                <div class="calendar-time" style="display: none;"></div>
+            </div>
+            <div class="drp-buttons">
+                <span class="drp-selected"></span>
+                <button class="cancelBtn btn btn-sm btn-default" type="button">Cancel</button>
+                <button class="applyBtn btn btn-sm btn-primary" disabled="disabled" type="button">Apply</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ส่วนของ Script การเรียกใช้งาน Daterangepicker -->
+    <script>
+        $(function() {
+            $('#daterange').daterangepicker({
+                opens: 'left',
+                locale: {
+                    format: 'MM/DD/YYYY'
+                }
+            });
+        });
+    </script>
+
+    <!-- ส่วนของ Script ที่ใช้เปลี่ยนภาพอัตโนมัติ -->
+    <script>
+        let images = document.querySelectorAll('.slides img');
+        let currentImage = 0;
+
+        function changeImage() {
+            for (let i = 0; i < images.length; i++) {
+                images[i].style.opacity = 0;
+            }
+
+            currentImage = (currentImage + 1) % images.length;
+            images[currentImage].style.opacity = 1;
+        }
+
+        setInterval(changeImage, 3000); // เปลี่ยนภาพทุก 3 วินาที
+    </script>
+</body>
+</html>
