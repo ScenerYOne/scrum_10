@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Title</title>
+  <title>Condition</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,39 +10,65 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
+    <style>
+      table, th, td {
+        border:1px solid black;
+      }
+      .te{
+        border-bottom: 2px solid black;
+        padding-bottom: 10px;
+        margin: 0 20%;
+      }
+      body {
+    background-color: #fbfdff; /* สีพื้นหลังสำหรับทั้งหน้าเว็บ */
+    margin: 0;
+    padding: 0;
+      }
+
+  .card-registration {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #fff; /* สีพื้นหลังของการ์ด */
+    border-radius: 15px;
+    padding: 20px; /* เพิ่มระยะห่างของข้อความ */
+      }
+
+  .btn-danger {
+    width: 150px;
+      }
+
+    </style>
+
 </head>
 
 <body class="bg-danger bg-opacity-25">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col">
-            <div class="card card-registration my-4">
-                <div class="row g-0">
-                  <div class="row g-0">
-                    <div class="col">
-                      <br/>
-                      <h2 class="mb-4" style="text-align: center; font-size:30 px;"> condition </h2>
-                        <span><p style="text-align: center; text-danger "></p></span>
-                             <ul class="list-inline">
-                              <li class="m-5"> 1. ผู้ใช้บริการต้องทำการระบุชื่อของสัตว์เลี้ยงของท่าน เพศ สายพันธุ์ อายุ และประวัติการฉีดวัคซีน การทำหมัน และสุขภาพของสัตว์เลี้ยง </li>
-                              <li class="m-5"> 2. ผู้ใช้บริการต้องการแจ้งรูปสัตว์เลี้ยงขอท่านเพื่อเป็นการยืนยันและสะดวกต่อการดูแลสัตว์เลี้ยงของท่าน </li>
-                              <li class="m-5"> 3. ในกรณีที่สัตว์เลี้ยงของท่านป่วย ทางร้านจะมีสัตวแพทย์มาทำการรักษา ในส่วนนี้ผู้ใช้บริการต้องจ่ายค่าบริการนอกเหนือเพิ่มเติมจากที่ท่าชำระเมื่อทำการจองห้อง</li>
-                              <li class="m-5"> 4. เมื่อเกิดการชำรุของอุปกรณ์ในห้องพักของสัตว์เลี้ยง เจ้าของต้องทำการรับผิดชอบค่าใช้จ่ายตามดุลพินิจของเจ้าของร้าน</li>
-                              <li class="m-5"> 5. การจองห้องพักต้องจองโดยมีสัตว์เลี้ยงขั้นต่ำ 1 ตัวต่อห้องพัก โดยเมื่อเกินเวลาที่กำหนดทางห้องพักจะคิดเวลาเพิ่มเป็นวันที่ 2 ของการจองห้องพัก</li>
-                              
-
-
-                             </ul> 
-                        </div>
-                    </div>
-                </div>
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col">
+        <div class="card card-registration">
+          <div class="card-body">
+            <div class="text-center">
+              <h2 class="mb-4" style="font-size: 30px;">Conditions</h2>
             </div>
+            <ul class="list-group list-group-flush" style="font-size: 15px;">
+              <!-- เพิ่มข้อความส่วนที่เหลือในรูปแบบเดียวกัน -->
+              <li class="list-group-item">1. ผู้ใช้บริการต้องทำการระบุชื่อของสัตว์เลี้ยงของท่าน เพศ สายพันธุ์ อายุ และประวัติการฉีดวัคซีน การทำหมัน และสุขภาพของสัตว์เลี้ยง</li>
+              <li class="list-group-item">2. ผู้ใช้บริการต้องการแจ้งรูปสัตว์เลี้ยงของท่านเพื่อเป็นการยืนยันและสะดวกต่อการดูแลสัตว์เลี้ยงของท่าน</li>
+              <li class="list-group-item">3. ในกรณีที่สัตว์เลี้ยงของท่านป่วย ทางร้านจะมีสัตวแพทย์มาทำการรักษา ในส่วนนี้ผู้ใช้บริการต้องจ่ายค่าบริการนอกเหนือเพิ่มเติมจากที่ท่านได้ชำระในขั้นตอนการจองห้อง</li>
+              <li class="list-group-item">4. ในกรณีผู้ใช้บริการนำสัตว์เลี้ยงมาใช้บริการแล้วพบว่าสัตว์เลี้ยงของท่านไม่ได้ทำการหยอดยาเห็บมาทางเราจะทำการหยอดยาให้ โดยจะคิดค่าบริการเพิ่มเติมเมื่อได้รับความยินยอมจากผู้ใช้บริการแล้วเท่านั้น</li>
+              <li class="list-group-item">5. เมื่อเกิดการชำรุดของอุปกรณ์ในห้องพักของสัตว์เลี้ยง เจ้าของต้องทำการรับผิดชอบค่าใช้จ่ายตามดุลพินิจของเจ้าของร้าน</li>
+              <li class="list-group-item">6. การจองห้องพักต้องจองโดยมีสัตว์เลี้ยงขั้นต่ำ 1 ตัวต่อห้องพัก หากเกินเวลาที่กำหนดห้องพักที่ได้จองไว้ ทางร้านจะทำการต่อเวลาโดยคิดเวลาเพิ่มเป็นวันที่ 2 ในการจองห้อง</li>
+            </ul>
+            <div class="text-center"></div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </div>
+  <div class="d-flex justify-content-center pt-1">
+    <a href="C:/Users/Admins/OneDrive/Documents/GitHub/scrum_10/RegisterFile/Register.html"><button type="button" class="btn btn-light btn-lg ms-2 mb-1 m-1" >accept</button></a>                                         
+  </div>
 
-
-
-    
+  
 </body>
 </html>
