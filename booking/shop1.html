@@ -5,14 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="author" content="Untree.co">
 	<link rel="shortcut icon" href="favicon.png">
-
 	<meta name="description" content="" />
-	<meta name="keywords" content="bootstrap, bootstrap4" />
-
+	<meta name="keywords" content="bootstrap, bootstrap5" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Serif+Pro:wght@400;700&display=swap" rel="stylesheet">
-
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/owl.carousel.min.css">
 	<link rel="stylesheet" href="css/owl.theme.default.min.css">
@@ -22,13 +18,176 @@
 	<link rel="stylesheet" href="css/daterangepicker.css">
 	<link rel="stylesheet" href="css/aos.css">
 	<link rel="stylesheet" href="css/style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    
 
-	<title>Tour Free Bootstrap Template for Travel Agency by Untree.co</title>
+</head>
+
+
+	<title>booking</title>
+
+	<style>
+		.slides {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .slides img {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            transition: opacity 1s ease-in-out;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            line-height: 1.5;
+            background: #ffffff;
+            overflow-x: hidden;
+            font-size: 14px;
+        }
+
+        body:before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 99;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            -webkit-transition: .3s all ease;
+            -o-transition: .3s all ease;
+            transition: .3s all ease;
+        }
+
+        body.offcanvas-menu:before {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .typed-cursor {
+            opacity: 1;
+        }
+
+        .typed-cursor.typed-cursor--blink {
+            animation: typedjsBlink 0.7s infinite;
+            -webkit-animation: typedjsBlink 0.7s infinite;
+            animation: typedjsBlink 0.7s infinite;
+        }
+
+        @keyframes typedjsBlink {
+            50% {
+                opacity: 0.0;
+            }
+        }
+
+        @-webkit-keyframes typedjsBlink {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+		.feature-1-wrap {
+        margin-bottom: 20px; /* ระยะห่างด้านล่างของแต่ละช่อง */
+    }
+
+    .feature-1 {
+        padding: 20px; /* การเพิ่ม padding เพื่อให้ช่องมีพื้นที่ของตัวข้อความ */
+        text-align: center; /* การจัดข้อความให้อยู่ตรงกลาง */
+        border: 1px solid #ccc; /* เพิ่มเส้นขอบของแต่ละช่อง */
+        border-radius: 10px; /* ทำให้มีขอบมนเมื่อใส่รูปหรือสีพื้นหลัง */
+        transition: all 0.3s ease; /* การทำให้เกิดการเปลี่ยนแปลงอย่างนุ่มนวล */
+    }
+
+    .feature-1:hover {
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเมื่อมีการโฮเวอร์ */
+    }
+	.feature-1 {
+        border: 1px solid #ebebeb;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .feature-1:hover {
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-1 .flaticon-house,
+    .feature-1 .flaticon-restaurant,
+    .feature-1 .flaticon-mail,
+    .feature-1 .flaticon-phone-call {
+        font-size: 50px;
+        margin-bottom: 15px;
+        display: block;
+    }
+
+    .feature-1 h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .feature-1 p {
+        font-size: 16px;
+        color: #888;
+    }
+
+    /* ขยายขนาด Feature Image และจัดการ padding */
+    .feature-img-bg {
+        background-size: cover;
+        background-position: center center;
+        height: 300px;
+        padding: 20px;
+    }
+
+    /* ปรับขนาด Feature Image ให้เต็มขนาด */
+    .frame {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .frame .feature-img-bg {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+	.btn-pink {
+        background-color: pink; /* สีพื้นหลัง */
+        color: rgb(0, 0, 0); /* สีข้อความ */
+        border: 1px  /* ไม่มีเส้นขอบ */
+        padding: 10px 20px; /* ขนาดของปุ่ม */
+        border-radius: 5px; /* ความโค้งของขอบปุ่ม */
+        text-decoration: none; /* ลบขีดเส้นใต้ข้อความ */
+    }
+	.btn-pink:hover {
+        background-color: #ff80bf; /* สีพื้นหลังเมื่อชี้เข้าไป */
+        transition: 0.3s ease-in-out; /* เพื่อให้มีการเปลี่ยนสีเรียบร้อย */
+    }
+						
+	</style>
+
+
+
 </head>
 
 <body >
-
-
 	<div class="site-mobile-menu site-navbar-target">
 		<div class="site-mobile-menu-header">
 			<div class="site-mobile-menu-close">
@@ -55,7 +214,7 @@
 			<div class="row align-items-center">
 				<div class="col-lg-7">
 					<div class="intro-wrap">
-						<h1 class="mb-6"><span class="d-block">Filo Hotels</span> Cat <span class="typed-words"></span></h1>
+						<h1 class="mb-6"><span class="d-block" style="text-align: center; font-family: Arial, Helvetica, sans-serif; color: #a76868;">Select a day</span> <span class="typed-words"></span></h1>
 
 						<div class="row">
 							<div class="col-12">
@@ -70,22 +229,20 @@
 											</select>
 										</div>
 										<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-5">
-											<input type="text" class="form-control" name="daterange">
+											<input type="date" class="form-control" name="daterange">
 										</div>
+										
 										<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
-											<input type="text" class="form-control" placeholder="# of Cat">
+											<input type="text" class="form-control" placeholder="# of People">
 										</div>
 
 									</div>    
 									<div class="row align-items-center">
-										<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
-											<input type="submit" class="btn btn-primary btn-block" value="Search">
-										</div>
 										<div class="col-lg-8">
-											<label class="control control--checkbox mt-3">
-												<span class="caption">Save this search</span>
-												<input type="checkbox" checked="checked" />
-												<div class="control__indicator"></div>
+											<label class="control control--checkbox mt-2">
+												<a href="C:/Users/Admins/OneDrive/Documents/GitHub/scrum_10/booking/Money.html">
+													<button type="button" class="btn btn-pink ms-2 mb-1 m-1" >accept</button>
+												</a>
 											</label>
 										</div>
 									</div>
@@ -93,6 +250,7 @@
 							</div>
 						</div>
 					</div>
+					
 				</div>
 				<div class="col-lg-5">
 						<div class="slides">
@@ -100,8 +258,141 @@
 							<img src="C:\Users\Admins\Downloads\tour-1.0.0\images\cog3ktbni8nf.jpg" alt="Image" class="img-fluid" style="height:100%; width: 100%;">
 							<img src="C:\Users\Admins\Downloads\tour-1.0.0\images\v2-87954e4deba5ec0d30f4484b8e0b222e_r.jpg" alt="Image" class="img-fluid" style="height:100%;width: 100%;" >
 						</div>
-			
+				</div>
+				<div class="daterangepicker ltr show-calendar opensright" style="top:401.5px; left:433.062px; right: auto; display: none;">
+					<div class="ranges"></div>
+					<div class="drp-calendar left">
+						<div class="calendar-table"></div>
+						<div class="calendar-time" style="display: none;"></div>
+					</div>
+					<div class="drp-calendar right">
+						<div class="drp-calendar left">
+							<div class="calendar-table"></div>
+							<div class="calendar-time" style="display: none;"></div>
+						</div>
+						<div class="drp-buttons">
+							<span class="drp-selected"></span>
+							<button class="cancelBtn btn btn-sm btn-default" type="button">Cancel</button>
+							<button class="applyBtn btn btn-sm btn-primary" disabled="disabled" type="button">Apply</button>
+						</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	
+
+		<div class="untree_co-section " style="justify-content: center;">
+			<div class="container">
+				<div class="row mb-5 justify-content-center">
+					<div class="col-lg-6 text-center">
+						<h2 class="section-title text-center mb-3">Room Services</h2>
+						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+					</div>
+				</div>
+				<div class="row align-items-stretch">
+					<!-- Feature Image -->
+					<div class="col-lg-4 order-lg-1">
+						<div class="h-100">
+							<div class="frame h-100">
+								<div class="feature-img-bg h-100" style="background-image: url('images/hero-slider-1.jpg');"></div>
+							</div>
+						</div>
+					</div>
+		
+					<!-- ข้อมูลของ Feature 1 -->
+					<div class="col-6 col-sm-6 col-lg-4 feature-1-wrap d-md-flex flex-md-column order-lg-1">
+						<div class="feature-1 d-md-flex">
+							<div class="align-self-center">
+								<span class="flaticon-house display-4 text-primary"></span>
+								<h3>Beautiful Condo</h3>
+								<p class="mb-0">Even the all-powerful Pointing has no control about the blind texts.</p>
+							</div>
+						</div>
+						<div class="feature-1">
+							<div class="align-self-center">
+								<span class="flaticon-restaurant display-4 text-primary"></span>
+								<h3>Restaurants & Cafe</h3>
+								<p class="mb-0">Even the all-powerful Pointing has no control about the blind texts.</p>
+							</div>
+						</div>
+					</div>
+		
+					<!-- ข้อมูลของ Feature 2 -->
+					<div class="col-6 col-sm-6 col-lg-4 feature-1-wrap d-md-flex flex-md-column order-lg-3">
+						<div class="feature-1 d-md-flex">
+							<div class="align-self-center">
+								<span class="flaticon-mail display-4 text-primary"></span>
+								<h3>Easy to Connect</h3>
+								<p class="mb-0">Even the all-powerful Pointing has no control about the blind texts.</p>
+							</div>
+						</div>
+						<div class="feature-1 d-md-flex">
+							<div class="align-self-center">
+								<span class="flaticon-phone-call display-4 text-primary"></span>
+								<h3>24/7 Support</h3>
+								<p class="mb-0">Even the all-powerful Pointing has no control about the blind texts.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+						<script>
+							$(function() {
+								$('#datepicker').daterangepicker({
+									opens: 'left',
+									locale: {
+										format: 'MM/DD/YYYY'
+									}
+								});
+							});
+						</script>
+						<script>
+							// JavaScript เพื่อทำการเปลี่ยนภาพอัตโนมัติเมื่อผู้ใช้เลื่อนหน้าจอ
+							let images = document.querySelectorAll('.slides img');
+							let currentImage = 0;
+					
+							function changeImage() {
+								for (let i = 0; i < images.length; i++) {
+									images[i].style.opacity = 0;
+								}
+					
+								currentImage = (currentImage + 1) % images.length;
+								images[currentImage].style.opacity = 1;
+							}
+					
+							setInterval(changeImage, 3000); // เปลี่ยนภาพทุก 3 วินาที
+						</script>
+						<script src="js/custom.js"></script>
+
+						<style type="text/css"> </style>
+						<div class="daterangepicker ltr show-calendar opensright" style="top:401.5px; left:433.062px; right: auto; display: none;">
+							<div class="ranges"></div>
+								<div class="drp-calendar left">
+									<div class="calendar-table"></div>
+								<div class="calendar-time" style="display: none;"></div>
+								</div>
+
+							<div class="drp-calendar right">
+								<div class="drp-calendar left">
+									<div class="calendar-table"></div>
+								<div class="calendar-time" style="display: none;"></div>
+							</div>
+							
+						<div class="drp-buttons">
+							<span class="drp-selected"></span>
+							<button class="cancelBtn btn btn-sm btn-default" type="button">Cancel</button>
+							<button class="applyBtn btn btn-sm btn-primary" disabled="disabled" type="button">Apply</button>
+						</div>
+				
+			
+
+
+
+
+
+ </body>
+</html>
+
