@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>แก้ไขข้อมูลส่วนตัว</title>
+    <title>Edit personal information</title>
     <style>
         /* เพิ่มสไตล์เบื้องต้น */
         body {
@@ -16,11 +16,11 @@
             background-image: url(https://wallpaperbat.com/img/51159-free-image-cute-cat-whiskers-animal-eyes-pink-background-wallpaper.jpg); 
             background-size: cover;
             background-repeat: no-repeat;
-            color: #333; /* Darker text color */
+            color: #333; 
 
         }
         form {
-            width: 300px;
+            width: 400px;
             padding: 20px;
             background-color: rgba(255, 255, 255, 0.25);
             border-radius: 5px;
@@ -32,7 +32,7 @@
         label {
             display: block;
             margin-bottom: 5px;
-            font-weight: bold; /* Adding bold font-weight */
+            font-weight: bold; 
 
         }
         input[type="text"],
@@ -42,11 +42,13 @@
             width: calc(100% - 16px);
             padding: 8px;
             margin-bottom: 10px;
+            box-sizing: border-box;
+
         }
         input[type="submit"] {
         width: 100%;
         padding: 10px;
-        background-color: rgba(255, 41, 162, 0.8); /* Darker pink color */
+        background-color: rgba(255, 41, 162, 0.8);
         color: white;
         border: none;
         border-radius: 5px;
@@ -54,8 +56,11 @@
     }
 
     input[type="submit"]:hover {
-        background-color: rgba(255, 41, 162, 1); /* Darker pink color on hover */
+        background-color: rgba(255, 41, 162, 1); 
     }
+
+    
+
     </style>
 </head>
 <body>
@@ -66,8 +71,7 @@
 
         <label for="username">Password:</label>
         <input type="password" id="username" name="username" required>
-
-        
+   
         <label for="fullname">ชื่อ-นามสกุล:</label>
         <input type="text" id="fullname" name="fullname" required>
         
@@ -77,7 +81,9 @@
         <label for="line_id">Line id:</label>
         <input type="text" id="line_id" name="line_id">
         
-        <input type="submit" value="บันทึกข้อมูล">
+        <input type="submit" value="บันทึกข้อมูล"> 
+
     </form>
 </body>
 </html>
+
