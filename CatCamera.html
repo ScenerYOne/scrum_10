@@ -124,20 +124,32 @@
       color: black;
       font-size: 14px;
     }
+    input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 12px;
+      box-sizing: border-box;
+    }
   </style>
 </head>
 <body>
     
+  <!-- ส่วนเกี่ยวกับหมายเลขห้อง -->
   <div class="content-left">
     <div class="cat-info">
-      <h2>Name Of Cat : Kitty</h2>
+      <h2 style="font-size: 24px; font-weight: bold;">Name Of Cat : Kitty</h2>
     </div>
   </div>
   <div class="content-right">
     <div class="room-info">
-      <h2>Room : 1</h2>
+      <h2 style="text-align: center;">Room : 
+        <!-- เปลี่ยน select field เป็น input field สำหรับใส่ตัวเลข -->
+        <input type="number" name="room-number" min="1" max="5" required>
+      </h2>
     </div>
   </div>
+  
+  <!-- ส่วนของฟอร์ม -->
   <form>
     <div class="center ">
       <video width="640" height="360" controls>
