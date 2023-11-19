@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cat information</title>
+    <style>
+        /* CSS เพื่อสไตล์ของฟอร์ม */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgba(244, 244, 244, 0.5);
+            background-image: url(https://images.squarespace-cdn.com/content/v1/61267f13ef1b76744216356f/4cc153bc-b8ec-4f3b-b8e9-163497a72bd4/AdobeStock_292363189_01.jpg); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #333; 
+        }
+
+        form {
+            width: 500px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: 2px solid #000000; 
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold; 
+        }
+
+        input[type="text"],
+        input[type="file"],
+        select {
+            width: calc(100% - 16px);
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: rgba(255, 41, 162, 0.8);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: rgba(255, 41, 162, 1); 
+        }
+
+        .language-links {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .language-links a {
+            padding: 5px 10px;
+            margin-right: 5px;
+            text-decoration: none;
+            color: #333;
+            border: 1px solid #333;
+            border-radius: 4px;
+        }
+
+        .language-links a:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+      input[type="text"]:hover,
+      input[type="password"]:hover,
+      textarea:hover,
+      select:hover {
+      background-color: rgba(255, 41, 162, 0.2);
+      }
+
+      
+
+    </style>
+</head>
+<body>
+    <div class="language-links">
+        <a href="#" onclick="changeLanguage('en')">English</a> | 
+        <a href="#" onclick="changeLanguage('th')">ไทย</a>
+    </div>
+
+    <form action="/submit_cat_info" method="post">
+        <h1>ข้อมูลแมว</h1>
+        <label for="catName">ชื่อแมว:</label>
+        <input type="text" id="catName" name="catName" required>
+
+        <label for="breed">พันธุ์แมว:</label>
+        <input type="text" id="breed" name="breed" required>
+
+        <label for="gender">เพศ:</label>
+        <select id="gender" name="gender" required>
+            <option value=""></option>
+            <option value="male">ผู้</option>
+            <option value="male">Male</option>
+            <option value="female">เมีย</option>
+            <option value="female">Female</option>
+            <option value="other">อื่นๆ</option>
+        </select>
+
+        <label for="age">อายุ:</label>
+        <input type="text" id="age" name="age" required>
+
+        <label for="vaccination">วัคซีน:</label>
+        <input type="text" id="vaccination" name="vaccination" required>
+
+        <label for="spayedNeutered">การทำหมัน:</label>
+        <select id="gender" name="gender" required>
+          <option value=""></option>
+          <option value="Already done">ทำแล้ว</option>
+          <option value="Already done">Already done</option>
+          <option value="Haven't done it yet">ยังไม่ได้ทำ</option>
+          <option value="Haven't done it yet">Haven't done it yet</option>
+      </select>
+      
+        <label for="health">สุขภาพ:</label>
+        <input type="text" id="health" name="health" required>
+
+        <label for="catImage">Add รูปแมว:</label>
+        <input type="file" id="catImage" name="catImage" accept="image/*" required>
+
+        <input type="submit" value="บันทึกข้อมูล" onclick="changeLanguage('en')">
+        
+    </form>
+
+    <script>
+        function changeLanguage(lang) {
+            const translations = {
+                'en': {
+                    'ข้อมูลแมว': 'Cat Information',
+                    'ชื่อแมว:': 'Cat Name:',
+                    'พันธุ์แมว:': 'Breed:',
+                    'เพศ:': 'Gender:',
+                    'อายุ:': 'Age:',
+                    'วัคซีน:': 'Vaccination:',
+                    'การทำหมัน:': 'Spayed/Neutered:',
+                    'สุขภาพ:': 'Health:',
+                    'Add รูปแมว:': 'Add Cat Image:',
+                    'บันทึกข้อมูล': 'Save Information'
+                },
+                'th': {
+                    'Cat Information': 'ข้อมูลแมว',
+                    'Cat Name:': 'ชื่อแมว:',
+                    'Breed:': 'พันธุ์แมว:',
+                    'Gender:': 'เพศ:',
+                    'Age:': 'อายุ:',
+                    'Vaccination:': 'วัคซีน:',
+                    'Spayed/Neutered:': 'การทำหมัน:',
+                    'Health:': 'สุขภาพ:',
+                    'Add Cat Image:': 'Add รูปแมว:',
+                    'Save Information': 'บันทึกข้อมูล'
+                }
+            };
+
+            const elementsToTranslate = document.querySelectorAll('h1, label, input[type="submit"], option');
+
+            elementsToTranslate.forEach(element => {
+                if (translations[lang][element.textContent]) {
+                    element.textContent = translations[lang][element.textContent];
+                }
+            });
+        }
+    </script>
+</body>
+</html>

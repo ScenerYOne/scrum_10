@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>แก้ไขข้อมูลส่วนตัว</title>
+    <title>Edit personal information</title>
     <style>
         /* เพิ่มสไตล์เบื้องต้น */
         body {
@@ -16,23 +16,23 @@
             background-image: url(https://wallpaperbat.com/img/51159-free-image-cute-cat-whiskers-animal-eyes-pink-background-wallpaper.jpg); 
             background-size: cover;
             background-repeat: no-repeat;
-            color: #333; /* Darker text color */
+            color: #333; 
 
         }
         form {
-            width: 300px;
+            width: 400px;
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.25);
+            background-color: rgba(255, 255, 255, 0.8);
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border: 2px solid #000000; 
 
-            
+           
         }
         label {
             display: block;
             margin-bottom: 5px;
-            font-weight: bold; /* Adding bold font-weight */
+            font-weight: bold; 
 
         }
         input[type="text"],
@@ -42,11 +42,15 @@
             width: calc(100% - 16px);
             padding: 8px;
             margin-bottom: 10px;
+            box-sizing: border-box;
+            background-color: #ffffff; /* กำหนดสีเป็นขาว */
+
+
         }
         input[type="submit"] {
         width: 100%;
         padding: 10px;
-        background-color: rgba(255, 41, 162, 0.8); /* Darker pink color */
+        background-color: rgba(255, 41, 162, 0.8);
         color: white;
         border: none;
         border-radius: 5px;
@@ -54,11 +58,23 @@
     }
 
     input[type="submit"]:hover {
-        background-color: rgba(255, 41, 162, 1); /* Darker pink color on hover */
+        background-color: rgba(255, 41, 162, 1); 
     }
+    
+
+    input[type="text"]:hover,
+    input[type="password"]:hover,
+    textarea:hover,
+    select:hover {
+    background-color: rgba(255, 41, 162, 0.2);
+    }
+
+    
+
     </style>
 </head>
 <body>
+
     <form action="/submit_edited_info" method="post">
         <h1>แก้ไขข้อมูลส่วนตัว</h1>
         <label for="username">User:</label>
@@ -66,8 +82,7 @@
 
         <label for="username">Password:</label>
         <input type="password" id="username" name="username" required>
-
-        
+   
         <label for="fullname">ชื่อ-นามสกุล:</label>
         <input type="text" id="fullname" name="fullname" required>
         
@@ -77,7 +92,10 @@
         <label for="line_id">Line id:</label>
         <input type="text" id="line_id" name="line_id">
         
-        <input type="submit" value="บันทึกข้อมูล">
-    </form>
+        <input type="submit" value="บันทึกข้อมูล"> 
+
+    </form> 
+
 </body>
 </html>
+
