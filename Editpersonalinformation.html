@@ -12,10 +12,12 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f4f4f4;
-            background-image: url(https://img3.thuthuatphanmem.vn/uploads/2019/06/17/hinh-anh-dep-ve-nhung-chu-meo-de-thuong_102855581.jpg); /* เปลี่ยน 'your-background-image.jpg' เป็น URL ของภาพที่ต้องการใช้ */
+            background-color: rgba(244, 244, 244, 0.5);
+            background-image: url(https://wallpaperbat.com/img/51159-free-image-cute-cat-whiskers-animal-eyes-pink-background-wallpaper.jpg); 
             background-size: cover;
             background-repeat: no-repeat;
+            color: #333; /* Darker text color */
+
         }
         form {
             width: 300px;
@@ -23,10 +25,15 @@
             background-color: rgba(255, 255, 255, 0.25);
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: 2px solid #000000; 
+
+            
         }
         label {
             display: block;
             margin-bottom: 5px;
+            font-weight: bold; /* Adding bold font-weight */
+
         }
         input[type="text"],
         input[type="password"],
@@ -37,17 +44,18 @@
             margin-bottom: 10px;
         }
         input[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            background-color: rgba(255, 0, 144, 0.25); /* bg-danger bg-opacity-25 */
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        input[type="submit"]:hover {
-            background-color: rgba(255, 0, 187, 0.25)); /* bg-danger bg-opacity-25 */
-        }
+        width: 100%;
+        padding: 10px;
+        background-color: rgba(255, 41, 162, 0.8); /* Darker pink color */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: rgba(255, 41, 162, 1); /* Darker pink color on hover */
+    }
     </style>
 </head>
 <body>
@@ -66,7 +74,7 @@
         <label for="address">ที่อยู่:</label>
         <textarea id="address" name="address" required></textarea>
         
-        <label for="line_id">Line:</label>
+        <label for="line_id">Line id:</label>
         <input type="text" id="line_id" name="line_id">
         
         <input type="submit" value="บันทึกข้อมูล">
