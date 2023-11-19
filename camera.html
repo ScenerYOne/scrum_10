@@ -23,8 +23,20 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       width: 300px;
       text-align: center;
+      perspective: 1000px; /* เพิ่มการมองเห็นให้กับองค์ประกอบที่มีการหมุน */
     }
 
+    img {
+      width: 25%;
+      transform-style: preserve-3d; /* เพิ่มการเคลื่อนไหวใน 3 มิติ */
+      transition: transform 0.5s; /* เพิ่มการเปลี่ยนแปลงที่สามารถทำได้ */
+    }
+
+    form:hover img {
+      transform: rotateY(180deg); /* หมุนภาพ 180 องศาเมื่อนำเมาส์ไปชี้ */
+    }
+
+    /* ส่วนที่เหลือเหมือนเดิม */
     label {
       display: block;
       margin-bottom: 8px;
@@ -50,13 +62,6 @@
     button:hover {
       background-color: #f784bd;
     }
-    .register-link {
-      color: #333;
-      text-decoration: none;
-      font-weight: bold;
-      display: block;
-      margin-top: 15px;
-    }
     .return-link {
       text-decoration: none;
       background-color: #ff9ee7;
@@ -74,13 +79,13 @@
   </style>
 </head>
 <body>
-<form action="file:///C:/Users/MILLX/Desktop/GitHubProject/scrum_10/CatCamera.html?" method="get">
-    <div center> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUWlexaUghpImA2fN6WPZiyDn45pW-s0Ou8Q&usqp=CAU" width="25%"></div>
-    <h1 center>Camera-Login</h1>
-    <label for="ID Camera">ID Camera</label>
+  <form action="file:///C:/Users/MILLX/Desktop/GitHubProject/scrum_10/CatCamera.html?" method="get">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUWlexaUghpImA2fN6WPZiyDn45pW-s0Ou8Q&usqp=CAU">
+    <h1>Camera-Login</h1>
+    <label for="ID Camera" style="text-align: left;">ID Camera:</label>
     <input type="text" id="ID Camera" name="ID Camera" required>
 
-    <label for="Camera Password">Camera Password</label>
+    <label for="Camera Password" style="text-align: left;">Camera Password:</label>
     <input type="password" id="Camera Password" name="Camera Password" required>
     <button type="submit" class="return-link">Login</button>
   </form>
